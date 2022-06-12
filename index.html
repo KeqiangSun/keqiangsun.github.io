@@ -57,6 +57,7 @@
     <meta name="msapplication-TileImage" content="https://keqiangsun.github.io/images/mstile-144x144.png?v=M44lzPylqQ">
     <meta name="msapplication-config" content="https://keqiangsun.github.io/images/browserconfig.xml?v=M44lzPylqQ">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="home/academicons-1.9.2/css/academicons.min.css"/>
     <link rel="stylesheet" href="home/font-awesome-4.7.0/css/font-awesome.min.css"> <!-- end custom head snippets -->
     <style id="fit-vids-style">
         .fluid-width-video-wrapper {
@@ -97,6 +98,26 @@
     <div id="main" role="main">
         <div class="sidebar sticky">
             <div itemscope="" itemtype="http://schema.org/Person">
+                <div class="author__avatar"> <img src="home/skq.png" class="author__avatar"
+                        alt="Keqiang Sun"></div>
+                <div class="author__content">
+                    <h3 class="author__name">Keqiang Sun</h3>
+                    <p class="author__bio">PhD Student @ CUHK MMLab</p>
+                </div>
+                <div class="author__urls-wrapper"> <button class="btn btn--inverse">Follow</button>
+                    <ul class="author__urls social-icons">
+                        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true">
+                        </i> Hong Kong</li>
+                        <li><a href="mailto:kqsun[at]link.cuhk.edu.com"><i class="fa fa-fw fa-envelope-square"
+                                    aria-hidden="true"></i> Email</a></li>
+                        <!-- <li><a href="https://www.linkedin.com/in/%E6%96%B0%E9%92%A2-%E6%BD%98-839060a5/"><i
+                                    class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn</a></li> -->
+                        <li><a href="https://github.com/KeqiangSun"><i class="fa fa-fw fa-github"
+                                    aria-hidden="true"></i> Github</a></li>
+                        <li><a href="https://scholar.google.com/citations?user=AJ7qJDEAAAAJ&hl=zh-TW&oi=ao"><i
+                                    class="ai ai-google-scholar-square ai-fw"></i> Google Scholar</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <article class="page" itemscope="" itemtype="http://schema.org/CreativeWork">
@@ -106,7 +127,113 @@
                 <header>
                     <h1 class="page__title" itemprop="headline"></h1>
                 </header>
-                <section class="page__content" itemprop="text"></section>
+                <section class="page__content" itemprop="text">
+                    <h1 id="about-me">About me</h1>
+                    <p>I am a second-year PhD student at <a href="http://mmlab.ie.cuhk.edu.hk">Multimedia Laboratory</a>, supervised by <a href="https://www.ee.cuhk.edu.hk/~hsli/">Prof.
+                            Hongsheng Li</a>. I also worked closely with <a
+                            href="https://elliottwu.com">Shangzhe Wu</a>.
+                        My current research focuses on facial analysis and generation, and 3D learning.
+                        I obtained my Master’s degree from Tsinghua University and Bachelor's degree in Tianjin University.
+                    </p>
+                    <!-- <p>My main works lie in <em>X-from-GAN</em>, which include <a
+                            href="https://keqiangsun.github.io/projects/DGP.html">Deep Generative Prior (DGP)</a>, <a
+                            href="https://keqiangsun.github.io/projects/GAN2Shape.html">GAN2Shape</a>, <a
+                            href="https://keqiangsun.github.io/projects/ShadeGAN.html">ShadeGAN</a>, and <a
+                            href="https://sheldontsui.github.io/projects/GOF">Generative Occusuncy Field (GOF)</a>.
+                        My goal is to build systems that are able to reconstruct and synthesise
+                        the complex visual world with both high fidelity and generalizability.</p> -->
+                    <!--- News ------ * One paper accepted to CVPR2022. * Two papers accepted to NeurIPS2021. * One paper accepted to ICCV2021. * [Deep generative prior (DGP)](https://arxiv.org/pdf/2003.13659.pdf) was accepted to TPAMI. * Our recent work [GAN2Shape](/projects/GAN2Shape.html) was accepted to ICLR2021 as an oral presentation. It shows the possibility of reconstructing 3D object shapes via 2D image GANs! * [Deep generative prior (DGP)](https://arxiv.org/pdf/2003.13659.pdf) was accepted to ECCV2020 as an oral presentation. It achieves precise GAN-inversion, enabling versatile [interesting applications](/projects/DGP.html). --->
+                    <!-- <h2 id="education-experience">Education Experience</h2>
+                    <dl>
+                        <dt><img src="home/cuhk.png" width="80" hspace="10" height="80" align="left"></dt>
+                        <dt> The Chinese University of Hong Kong, HK SAR</dt>
+                        <dd>August 2020 - Now</dd>
+                        <dd>Ph.D. Student in Electronic Engineering.</dd>
+                        <dt><img src="home/Tsinghua.png" width="80" hspace="10" height="80" align="left"></dt>
+                        <dt> Tsinghua University, Beijing, China</dt>
+                        <dd>August 2017 - July 2020</dd>
+                        <dd>MSc in Integrated Circuit Engineering</dd>
+                        <dt><img src="home/tju.png" width="80" hspace="10" height="80" align="left"></dt>
+                        <dt> Tsinghua University, Tianjin, China</dt>
+                        <dd>August 2013 - July 2017</dd>
+                        <dd>B.E. in Electrical Engineering</dd>
+                    </dl> -->
+                    <h2 id="publications">Publications</h2>
+                    <dl>
+                        <dt><img src="home/cgof.png" width="170" hspace="10" height="160" align="left"></dt>
+                        <dt> Controllable 3D Face Synthesis with Conditional Generative Occupancy Fields</dt>
+                        <dd><strong>Keqiang Sun</strong>, Shangzhe Wu, Zhaoyang Huang, Ning Zhang, Quan Wang, Hongsheng Li.</dd>
+                        <dd>Arxiv Preprint</dd>
+                        <dd>
+                            <a href="https://keqiangsun.github.io/projects/cgof/">[Paper (Coming Soon)]</a>,
+                            <a href="https://keqiangsun.github.io/projects/cgof/">[Project page]</a>,
+                            <a href="https://keqiangsun.github.io/projects/cgof/">[Code (Coming Soon)]</a>
+                        </dd>
+                    </dl>
+                    <hr>
+                    <dl>
+                        <dt><img src="home/gar.png" width="170" hspace="10" height="160" align="left"></dt>
+                        <dt> Inverting Generative Adversarial Renderer for Face Reconstruction</dt>
+                        <dd>Jingtan Piao, <strong>Keqiang Sun</strong>, Quan Wang, Kwan-Yee Lin, Hongsheng Li.</dd>
+                        <!-- <dd>CVPR, 2021<span style="color:blue">(Oral Presentation)</span></dd> -->
+                        <dd>Computer Vision and Pattern Recognition (<strong>CVPR</strong>), 2021 <span style="color:blue">(oral)</span></dd>
+                        <dd>
+                            <a href="https://arxiv.org/abs/2105.02431">[Paper]</a>,
+                            <a href="https://westlypark.github.io/">[Project page]</a>,
+                            <a href="https://westlypark.github.io/index.html">[Code]</a>
+                        </dd>
+                    </dl>
+                    <hr>
+                    <dl>
+                        <dt><img src="home/avs.png" width="170" hspace="10" height="160" align="left"></dt>
+                        <dt> Aggregation via Separation: Boosting Facial Landmark Detector with Self-Supervised Style Transition</dt>
+                        <dd>Shengju Qian, <strong>Keqiang Sun</strong>, Wayne Wu, Chen Qian, Jiaya Jia.</dd>
+                        <dd>International Conference on Computer Vision (<strong>ICCV</strong>), 2019</dd>
+                        <dd><a href="https://arxiv.org/abs/1908.06440">[Paper]</a>,
+                            <a href="https://github.com/TheSouthFrog/stylealign">[Code]</a>
+                        </dd>
+                    </dl>
+                    <hr>
+                    <dl>
+                        <dt><img src="home/FAB.png" width="170" hspace="10" height="160" align="left"></dt>
+                        <dt> FAB: A Robust Facial Landmark Detection Framework for Motion-Blurred Videos</dt>
+                        <dd><strong>Keqiang Sun</strong>, Wayne Wu, Tinghao Liu, Shuo Yang, Quan Wang, Qiang Zhou, Zuochang Ye, Chen Qian.</dd>
+                        <dd>International Conference on Computer Vision (<strong>ICCV</strong>), 2019</dd>
+                        <dd>
+                            <a href="https://arxiv.org/abs/1910.12100">[Paper]</a>,
+                            <a href="https://keqiangsun.github.io/projects/FAB/">[Project page]</a>,
+                            <a href="https://github.com/keqiangsun/FAB">[Code]</a>
+                        </dd>
+                    </dl>
+                    <hr>
+                    <h2 id="professional-activities">Professional Activities</h2>
+                    <p>I serve as a reviewer for CVPR, ICCV, ECCV, NeurIPS, AAAI, and IJCV.</p>
+                    <!-- <h2 id="professional-experience">Professional Experience</h2>
+                    <dl>
+                        <dt><img src="home/mpi.png" width="80" hspace="10" height="80" align="left"></dt>
+                        <dt> Max Planck Institute for Informatics, Germany</dt>
+                        <dd>August 2021 - Now</dd>
+                        <dd>Postdoc researcher at the <a
+                                href="https://www.mpi-inf.mpg.de/departments/visual-computing-and-artificial-intelligence">Department
+                                of Visual Computing and Artificial Intelligence</a></dd>
+                        <dt><img src="home/cuhk.png" width="80" hspace="10" height="80" align="left"></dt>
+                        <dt> The Chinese University of Hong Kong, HK SAR</dt>
+                        <dd>October 2016 - August 2017</dd>
+                        <dd>Junior Research Assistant at Multimedia Laboratory</dd>
+                    </dl> -->
+                    <!-- <h2 id="honors--awards">Honors &amp; Awards</h2>
+                    <ul>
+                        <li>Winner of <a href="http://bdd-data.berkeley.edu/wad-2018.html">WAD 2018 Drivable Area
+                                Segmentation Challenge</a>, 2018</li>
+                        <li>Winner of <a href="http://benchmark.tusimple.ai/#/">Tusimple Lane Detection Challenge
+                                2017</a>, 2017</li>
+                        <li>Hong Kong PhD Fellowship Scheme (HKFPS), 2017</li>
+                        <li>Outstanding Graduate of Tsinghua University, 2016</li>
+                        <li>Outstanding Graduate of Beijing, 2016</li>
+                        <li>National Scholarship, 2015</li>
+                        <li>National Scholarship, 2013</li>
+                    </ul> -->
+                </section>
                 <footer class="page__meta"></footer>
             </div>
         </article>
@@ -117,6 +244,7 @@
             <!-- <a href="/sitemap/">Sitemap</a> -->
             <!-- end custom footer snippets -->
             <center>
+                <a href='https://clustrmaps.com/site/1bowx'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=g7mm-yJ3FoSLvc9eIAQPs61ZbUUARwtN6mpkKCzN15k&co=2d78ad&ct=ffffff'/></a>
                 <div class="page__footer-copyright">© 2022 Keqiang Sun. Powered by <a href="http://jekyllrb.com/"
                         rel="nofollow">Jekyll</a> &amp; <a
                         href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a
