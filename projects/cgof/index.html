@@ -35,8 +35,8 @@
 				<div class="authors">
 					<a href="http://keqiangsun.github.io/">Keqiang Sun</a><sup>1</sup>&nbsp;&nbsp;
 					<a href="https://elliottwu.com">Shangzhe Wu</a><sup>2</sup>&nbsp;&nbsp;
-					<a href="https://elliottwu.com">Zhaoyang Huang</a><sup>1</sup>&nbsp;&nbsp;
-					<a href="">Ning Zhang</a><sup>3</sup>&nbsp;&nbsp;
+					<a href="https://drinkingcoder.github.io">Zhaoyang Huang</a><sup>1</sup>&nbsp;&nbsp;
+					<a>Ning Zhang</a><sup>3</sup>&nbsp;&nbsp;
 					<a href="https://scholar.google.com/citations?user=KmxEHm4AAAAJ&hl=zh-TW&oi=ao">Quan
 						Wang</a><sup>3</sup>&nbsp;&nbsp;
 					<a href="https://www.ee.cuhk.edu.hk/~hsli/">HongSheng Li</a><sup>1</sup>&nbsp;&nbsp;
@@ -50,10 +50,36 @@
 					<sup>3</sup><a href="https://www.sensetime.com/?lang=en-us">SenseTime Research</a>
 				</div>
 
+				<div class="section downloads">
+					<!-- <h2>Downloads</h2> -->
+					<center>
+						<ul>
+							<li class="grid">
+								<div class="griditem">
+									<a href="https://arxiv.org/abs/1805.10483" target="_blank" class="imageLink"><img
+											src="paper.png" width="10%" ></a><br><a href="https://arxiv.org/abs/1805.10483">Paper and Appendix</a>
+								</div>
+							</li>
+							<li class="grid">
+								<div class="griditem">
+									<img src="code.png" width="10%" ><br><a href="https://github.com/keqiangsun/cGOF"
+										target="_blank">Code and Model</a>
+								</div>
+							</li>
+						</ul>
+					</center>
+				</div>
+	
 			</div>
 
 
-			<center><img src="teaser.png" width="100%" border="0"></center>
+			<!-- <center><img src="teaser.mp4" width="60%" border="0"></center> -->
+
+			<center>
+				<!-- <iframe src="https://www.youtube.com/embed/XcLHH-YUFPY" allow="autoplay; encrypted-media"
+					allowfullscreen="" width="560" height="315" frameborder="0"></iframe> -->
+				<img src="video.mp4" width="80%" border="0">
+			</center>
 			<div class="section abstract">
 				<h2>Abstract</h2>
 				<p>
@@ -75,32 +101,53 @@
 					controllable face synthesis methods.
 				</p>
 			</div>
-			<div class="section downloads">
-				<h2>Demo</h2>
-				<center>
-					<iframe src="https://www.youtube.com/embed/XcLHH-YUFPY" allow="autoplay; encrypted-media"
-						allowfullscreen="" width="560" height="315" frameborder="0"></iframe>
-				</center>
+			<div class="section method">
+				<h2>Method Overview</h2>
+				<center><img src="method.png" width="80%" border="0"></center>
+				<p>
+					(Top): Conditional Generative Occupancy Field (cGOF) leverages a mesh-guided volume sampler and a distance-aware volume density regularizer,
+					which effectively conditions the generated NeRF on an input 3DMM mesh. It is trained in an adversarial learning framework using only single-view images.
+					(Bottom): The 3D landmark loss encourages the semantically important facial landmarks to follow the input mesh,
+					and the volume warping loss enforces two NeRF volumes generated with different expression codes to be consistent
+					through a warping field induced from the corresponding 3DMM meshes
+				</p>
 			</div>
-			<div class="section downloads">
-				<h2>Downloads</h2>
+			<div class="section demo">
+				<h2>Results</h2>
+
+				<h3>Pose Control</h3>
 				<center>
-					<ul>
-						<li class="grid">
-							<div class="griditem">
-								<a href="https://arxiv.org/abs/1805.10483" target="_blank" class="imageLink"><img
-										src="paper.png"></a><br><a href="https://arxiv.org/abs/1805.10483">Paper</a>
-							</div>
-						</li>
-						<li class="grid">
-							<div class="griditem">
-								<img src="code.png"><br><a href="https://github.com/keqiangsun/cGOF"
-									target="_blank">Code
-									and Model</a>
-							</div>
-						</li>
-					</ul>
+					<h4>Pose Control Result Comparison.</h4>
 				</center>
+				<center><img src="pose_cmp.png" width="100%" border="0"></center>
+				<center>
+					<h4>Our Pose Control Demo.</h4>
+				</center>
+				<center><img src="poses.mp4" width="80%" border="0"></center>
+				
+
+				<h3>Expression Control</h3>
+				<center>
+					<h4>Expression Control Results of DiscoFaceGan.</h4>
+				</center>
+				<center><img src="discofacegan_exp.pdf" width="80%" border="0"></center>
+
+				<center>
+					<h4>Expression Control Results of GAN-Control.</h4>
+				</center>
+				<center><img src="gan_control_exp.pdf" width="80%" border="0"></center>
+
+				<center>
+					<h4>Expression Control Results of Our Method.</h4>
+				</center>
+				<center><img src="cgof_exp_mild.pdf" width="80%" border="0"></center>
+				<center><img src="cgof_exp_wild.pdf" width="80%" border="0"></center>
+
+				<center>
+					<font size="3">Our Expression Control Demo.</font>
+				</center>
+				<center><img src="mesh_exp_norm.mp4" width="80%" border="0"></center>
+				
 			</div>
 
 
@@ -111,12 +158,12 @@
 
 				<div class="section bibtex">
 					<pre>
-@inproceedings{keqiang2019fab,
-author = {Sun, Keqiang and Wu, Wayne and Liu, Tinghao and Yang, Shuo and Wang, Quan and Zhou, Qiang and and Ye, Zuochang and Qian, Chen},
-title = {FAB: A Robust Facial Landmark Detection Framework for Motion-Blurred Videos},
-booktitle = {ICCV},
-month = October,
-year = {2019}
+@inproceedings{keqiang2022controllable,
+author = {Sun, Keqiang and Wu, Shangzhe and Hongsheng Li},
+title = {Controllable 3D Face Synthesis with Conditional Generative Occupancy Fields},
+booktitle = {ArXiv},
+month = June,
+year = {2022}
 }
 				  </pre>
 				</div>
