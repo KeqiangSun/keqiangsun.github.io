@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Our method learns a generative model of articulated 3D animal motions from raw, unlabeled online videos.">
+  <meta name="keywords" content="Ponymation, Unlabeled, 3D motion generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ponymation: Learning 3D Animal Motions from Unlabeled Online Videos</title>
+
+  <meta property="og:image" content="https://3dmagicpony.github.io/resources/og_image.jpg"/>
+	<meta property="og:title" content="Ponymation: Learning 3D Animal Motions from Unlabeled Online Videos." />
+	<meta property="og:description" content="Our method learns a generative model of articulated 3D animal motions from raw, unlabeled online videos." />
+  <!-- Twitter automatically scrapes this. Go to https://cards-dev.twitter.com/validator?
+      if you update and want to force Twitter to re-scrape. -->
+  <meta property="twitter:card"          content="summary" />
+  <meta property="twitter:title"         content="Ponymation: Learning 3D Animal Motions from Unlabeled Online Videos." />
+  <meta property="twitter:description"   content="Our method learns a generative model of articulated 3D animal motions from raw, unlabeled online videos." />
+  <meta property="twitter:image"         content="https://3dmagicpony.github.io/resources/og_image.jpg" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFNFH9CKNX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-VFNFH9CKNX');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./resources/running-horse.jpeg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <!-- <script src="./static/js/index.js"></script> -->
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <!-- <video id="banner" autoplay muted loop playsinline height="100%">
+          <source src="resources/carousel.mp4"
+                  type="video/mp4">
+        </video> -->
+      </div>
+      <br>
+
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title" style="font-size: 2.2rem;">&#128014; Ponymation: Learning 3D Animal Motions from Unlabeled Online Videos</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://keqiangsun.github.io/">Keqiang Sun</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://dorlitvak.github.io">Dor Litvak</a><sup>2,3*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~yzzhang/">Yunzhi Zhang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jiajunwu.com">Jiajun Wu</a><sup>2&#10013;</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://elliottwu.com">Shangzhe Wu</a><sup>2&#10013;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup>CUHK MMLab,
+            </span>
+            <span class="author-block">
+              <sup>2</sup>Stanford University,
+            </span>
+            <span class="author-block">
+              <sup>3</sup>UT Austin
+            </span>
+          </div>
+
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">(* Equal Contribution, &#10013; Corresponding Authors)</span>
+          </div>
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">CVPR 2024</span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2211.12497"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/KoLzpESstLk"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/elliottwu/MagicPony"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="resources/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle">
+        Our method learns a generative model of articulated 3D motions from raw, unlabeled online videos.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce Ponymation, a new method for learning a generative model of articulated 3D animal motions from raw, unlabeled online videos. Unlike existing approaches for motion synthesis, our model does not require any pose annotations or parametric shape models for training, and is learned purely from a collection of raw video clips obtained from the Internet. We build upon a recent work, MagicPony, which learns articulated 3D animal shapes purely from single image collections, and extend it on two fronts. First, instead of training on static images, we augment the framework with a video training pipeline that incorporates temporal regularizations, achieving more accurate and temporally consistent reconstructions. Second, we learn a generative model of the underlying articulated 3D motion sequences via a spatio-temporal transformer VAE, simply using 2D reconstruction losses without relying on any explicit pose annotations. At inference time, given a single 2D image of a new animal instance, our model reconstructs an articulated, textured 3D mesh, and generates plausible 3D animations by sampling from the learned motion latent space.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/Q8pDLzC-mRc?si=9000eIVGsU2wcg68" title="Ponymation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3"></h2>
+
+        <h2 class="title is-5">Motion Generation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Given just a single test image, we can generate diverse 4D animations in a feedforward fashion within seconds, including abstract drawings and artifacts.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="horse-real" autoplay controls muted preload loop playsinline>
+            <source src="resources/image_drive.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <br>
+
+        <h2 class="title is-5">More Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Here are some more results of the 4D animations.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+          <video id="horse-real" autoplay controls muted preload loop playsinline>
+            <source src="resources/more_results.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <br>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{wu2023magicpony,
+  author    = {Shangzhe Wu and Ruining Li and Tomas Jakab and Christian Rupprecht and Andrea Vedaldi},
+  title     = {{MagicPony}: Learning Articulated 3D Animals in the Wild},
+  journal   = {CVPR},
+  year      = {2023}
+}</code></pre>
+  </div>
+</section>
+
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      We are grateful to Zizhang Li, Feng Qiu and Ruining Li for insightful discussions.
+    </p>
+    <p>
+      Shangzhe Wu is supported by Meta Research. Tomas Jakab is supported by ERC-CoG UNION 101001212. Christian Rupprecht is supported by VisualAI EP/T028572/1 and ERC-CoG UNION 101001212. Andrea Vedaldi is supported by ERC-CoG UNION 101001212.
+    </p>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This webpage template is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
